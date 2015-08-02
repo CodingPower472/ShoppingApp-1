@@ -11,10 +11,8 @@
 		<link href="http://bootswatch.com/flatly/bootstrap.min.css" rel="stylesheet">
 		<link rel="stylesheet" href="css/main.css">
 
-		<!-- jQuery -->
-		<script src="//code.jquery.com/jquery.js"></script>
-		<!-- MY CUP OF JAVAscript-->
-		<script src="js/main.js"></script>
+		
+		
 
 		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -34,15 +32,13 @@
 				<div class="col-md-12 text-center">
 					<div class="input-area">
 						<form class="form-inline">
-							<input type="text" placeholder="Input your stüff">
-							<button class="btn btn-success btn-xs">Add it!</button>
+							<input type="text" id="item" placeholder="Input your stüff">
+							<button id="add" type="button" class="btn btn-success btn-xs">Add it!</button>
 						</form>						
 					</div>
 					<div class="col-md-4 col-md-offset-4 shopping-list">
-						<ul>
-							<li class="done"><button class="btn btn-xs btn-danger">delete</button>  List Item Done</li>
-							<li>List Item Two</li>
-							<li>List Item Three</li>
+						<ul id="list">
+							
 						</ul>
 					</div>
 				</div> <!-- END MIDDLE SECTION CALLED COL-MD-12-->
@@ -50,8 +46,12 @@
 		</section>
 		
 
-		
+		<!-- jQuery -->
+		<script src="//code.jquery.com/jquery.js"></script>
 		<!-- Bootstrap JavaScript -->
 		<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+		<!-- MY CUP OF JAVAscript-->
+		<script src="js/main.js"></script>
 	</body>
 </html>
