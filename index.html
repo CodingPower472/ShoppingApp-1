@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="shopping">
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,7 +12,8 @@
 		<link rel="stylesheet" href="css/main.css">
 
 		<!-- jQuery -->
-		<script src="//code.jquery.com/jquery.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.3/angular.min.js"></script>
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 		<!-- MY CUP OF JAVAscript-->
 		<script src="js/main.js"></script>
 
@@ -31,18 +32,19 @@
 				<h4>What Will You Buy?</h4>
 			</header>
 				<!-- BEGIN OF MIDDLE SECTION-->
-				<div class="col-md-12 text-center">
+				<div class="col-md-12 text-center" ng-controller="MainController as vm">
 					<div class="input-area">
-						<form class="form-inline">
-							<input id="item" type="text" placeholder="Input your stüff">
-							<button type="button" id="add" class="btn btn-success btn-xs">Add it!</button>
+						<form class="form-inline" ng-submit="vm.add()">
+							<input ng-model="vm.item" type="text" placeholder="Input your stüff">
+							<input type="submit" class="btn btn-success btn-xs" value="Add it!" />
 						</form>						
 					</div>
 					<div class="col-md-4 col-md-offset-4 shopping-list">
 						<ul id="list">
-							<li class="done"><button class="btn btn-xs btn-danger">delete</button>  List Item Done</li>
-							<li>List Item Two</li>
-							<li>List Item Three</li>
+							<li ng-repeat="item in vm.list">
+                {{ item }}
+                <i class="glyphicon glyphicon-trash" ng-click="vm.remove($index)"></i>
+              </li>
 						</ul>
 					</div>
 				</div> <!-- END MIDDLE SECTION CALLED COL-MD-12-->
